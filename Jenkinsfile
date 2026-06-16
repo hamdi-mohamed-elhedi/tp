@@ -5,12 +5,7 @@ pipeline {
         SONARQUBE = 'sonarqube' // nom défini dans Jenkins
     }
 
-    stages {
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/hamdi-mohamed-elhedi/tp.git'
-            }
-        }
+   
 
         stage('Build') {
             steps {
