@@ -23,7 +23,7 @@ tools {
                 withSonarQubeEnv('sonarqube') {
                     sh """
 
-                    mvn clean verify sonar:sonar -Dsonar.projectKey=tp -Dsonar.projectName='tp \
+                    mvn clean verify sonar:sonar -Dsonar.projectKey=tp -Dsonar.projectName=tp 
                     
 
                     """
