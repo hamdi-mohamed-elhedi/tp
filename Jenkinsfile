@@ -18,22 +18,21 @@ tools {
             }
         }
 
-        stage('SonarQube Analysis') {
-            steps {
-                withSonarQubeEnv('sonarqube') {
-                    sh """
-
-                    mvn clean verify sonar:sonar -Dsonar.projectKey=tp -Dsonar.projectName=tp \
-                    
-                    -Dsonar.login=admin \
-                        -Dsonar.password=Mha12345678!
-
-                    
-
-                    """
-                }
-            }
+      
+stage('SonarQube Analysis') {
+    steps {
+        withSonarQubeEnv('sonarqube') {
+            sh """
+            mvn clean verify sonar:sonar \
+                -Dsonar.projectKey=tp \
+                -Dsonar.projectName=tp \
+                -Dsonar.login=admin \
+                -Dsonar.password=Mha12345678!
+            """
         }
+    }
+}
+
 
         stage('Quality Gate') {
             steps {
