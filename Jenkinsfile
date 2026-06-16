@@ -20,7 +20,7 @@ tools {
 
         stage('SonarQube Analysis') {
             steps {
-                withSonarQubeEnv('SonarQube') {
+                withSonarQubeEnv('sonarqube') {
                     sh """
 
                     ${mvn}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=tp -Dsonar.projectName='tp \
