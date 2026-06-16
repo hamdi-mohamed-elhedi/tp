@@ -4,6 +4,11 @@ pipeline {
     environment {
         SONARQUBE = 'sonarqube' // nom défini dans Jenkins
     }
+    
+tools {
+    maven 'maven'
+}
+
 
       stages {
 
