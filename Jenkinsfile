@@ -30,11 +30,17 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh """
-                echo "Stopping old app if exists..."
+                echo "Go to workspace"
+                cd /var/lib/jenkins/workspace/test
+
+                echo "Check jar"
+                ls -l target/
+
+                echo "Stop old app"
                 pkill -f 'tp-1.0.jar' || true
 
-                echo "Starting app..."
-                nohup java -jar target/tp-1.0.jar > app.log 2>&1 &
+                echo "Start app on port 8088"
+                nohup java -jar target/tp-1.0.jar --server.port=8088 > app.log 2>&1 &
                 """
             }
         }
