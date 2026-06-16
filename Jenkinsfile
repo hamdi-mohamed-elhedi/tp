@@ -5,7 +5,7 @@ pipeline {
         SONARQUBE = 'sonarqube' // nom défini dans Jenkins
     }
 
-   
+      stages {
 
         stage('Build') {
             steps {
@@ -35,5 +35,5 @@ pipeline {
                 }
             }
         }
-    
+      }   
 }
