@@ -27,20 +27,23 @@ pipeline {
             }
         }
 
-        stage('Deploy') {
+        stage('Docker Build') {
             steps {
                 sh """
-                echo "Go to workspace"
-                cd /var/lib/jenkins/workspace/test
+                docker build -t tp-app .
+                """
+            }
+        }
 
-                echo "Check jar"
-                ls -l target/
+        stage('Docker Run') {
+            steps {
+                sh """
+                echo "Stop old container"
+                docker stop tp-container || true
+                docker rm tp-container || true
 
-                echo "Stop old app"
-                pkill -f 'tp-1.0.jar' || true
-
-                echo "Start app on port 8088"
-                nohup java -jar target/tp-1.0.jar --server.port=8088 > app.log 2>&1 &
+                echo "Run new container"
+                docker run -d -p 8088:8088 --name tp-container tp-app
                 """
             }
         }
