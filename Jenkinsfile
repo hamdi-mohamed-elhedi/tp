@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/hamdi-mohamed-elhedi/tp.gitt'
+                git 'https://github.com/hamdi-mohamed-elhedi/tp.git'
             }
         }
 
