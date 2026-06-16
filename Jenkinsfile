@@ -23,7 +23,7 @@ tools {
                 withSonarQubeEnv('sonarqube') {
                     sh """
 
-                    ${mvn}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=tp -Dsonar.projectName='tp \
+                    mvn clean verify sonar:sonar -Dsonar.projectKey=tp -Dsonar.projectName='tp \
                     
                         -Dsonar.host.url=$SONAR_HOST_URL \
                         -Dsonar.login=$SONAR_AUTH_TOKEN
