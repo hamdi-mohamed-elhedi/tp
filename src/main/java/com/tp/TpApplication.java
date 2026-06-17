@@ -11,7 +11,11 @@ public class TpApplication {
         SpringApplication.run(TpApplication.class, args);
 
         
-    
+    String msg = "SonarQube demo";
+    System.out.println(msg);
+    System.out.println(msg);
+    System.out.println(msg);
+    System.out.println(msg);
 
     }
 }
