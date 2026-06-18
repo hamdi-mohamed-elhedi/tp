@@ -13,7 +13,7 @@ public String message() {
         <html>
             <body>
                 <h1 style='color:green; text-align:center'>
-                 ✅  Demo Mercredi ✅  Test
+                 ✅  Demo du Jeudi ✅  
                 </h1>
             </body>
         </html>
