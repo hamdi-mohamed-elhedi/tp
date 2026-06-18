@@ -13,12 +13,7 @@ public class TpApplication {
         
     String msg = "SonarQube demo";
     System.out.println(msg);
-    System.out.println(msg);
-    System.out.println(msg);
-    System.out.println(msg);
-    System.out.println(msg);
-    System.out.println(msg);
-    System.out.println(msg);
+
   
 
     }
